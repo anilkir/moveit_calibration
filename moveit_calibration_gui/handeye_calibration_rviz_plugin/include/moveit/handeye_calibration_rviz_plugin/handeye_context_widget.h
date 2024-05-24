@@ -88,6 +88,7 @@ class TFFrameNameComboBox : public QComboBox
 public:
   TFFrameNameComboBox(FRAME_SOURCE source = ROBOT_FRAME, QWidget* parent = 0) : QComboBox(parent), frame_source_(source)
   {
+    // TODO: Find a way to get the system namespace dynamically here
     robot_model_loader_.reset(new robot_model_loader::RobotModelLoader("robot_description"));
     frame_manager_.reset(new rviz::FrameManager());
   }
